@@ -3,7 +3,7 @@ require 'time'
 require_relative '../lib/helpers/common_helper'
 
 class CommonHelperTest < Minitest::Test
-  include MegliCommonHelper
+  include MegliHelper
 
   def test_nil_or_empty
     assert_equal true, CommonHelper.nil_or_empty?(nil)

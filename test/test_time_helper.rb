@@ -3,7 +3,7 @@ require 'time'
 require_relative '../lib/helpers/time_helper'
 
 class TimeHelperTest < Minitest::Test
-  include MegliCommonHelper
+  include MegliHelper
 
   def test_get_time
     time =  TimeHelper.get_time

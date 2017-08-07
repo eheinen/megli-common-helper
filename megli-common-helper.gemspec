@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'megli_common_helper'
-  s.version     = '1.0.3'
+  s.version     = '1.0.4'
   s.date        = '2017-08-07'
   s.summary     = "Megli common helpers"
   s.description = "Megli common helper has some basic helpers to be used in a ruby project"
