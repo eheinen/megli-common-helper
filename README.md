@@ -7,10 +7,10 @@ A set of helpers to be used in Ruby projects.
 Install the gem:
 
 ```
-  gem install megli_common_helper
-  
-  or
-  
+  gem install megli_common_helper
+```  
+or
+```  
   gem 'megli_common_helper', '~> 1.0', '>= 1.0.4'
 ```
 
