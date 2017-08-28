@@ -43,6 +43,16 @@ class CommonHelperTest < Minitest::Test
     assert_equal "200.123", CommonHelper.to_decimal(200.123, '%8.3f')
   end
 
+  def test_transform_hash_keys_in_snake_case
+    hash = { 'Test Value1' => '123', 'TestValue2' => '1234' }
+    result = CommonHelper.transform_hash_keys_in_snake_case hash
+    assert_equal result, { "test_value1" => "123", "test_value2" => "1234" }
+
+    hash = [{ 'Test Value1' => '123', 'TestValue2' => '1234' }, { 'Test Value1' => '123', 'TestValue2' => '1234' }]
+    result = CommonHelper.transform_hash_keys_in_snake_case hash
+    assert_equal result, [{"test_value1"=>"123", "test_value2"=>"1234"}, {"test_value1"=>"123", "test_value2"=>"1234"}]
+  end
+
   def test_valid_json
     assert_equal true, CommonHelper.valid_json?('{}')
     assert_equal true, CommonHelper.valid_json?('{ "a": 1, "b": 2 }')

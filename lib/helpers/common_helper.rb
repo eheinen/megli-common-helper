@@ -1,5 +1,6 @@
 require 'json'
 require 'timeout'
+require_relative '../ext/string'
 
 module MegliHelper
   class CommonHelper
@@ -37,6 +38,20 @@ module MegliHelper
         return new_decimal + currency
       end
       new_decimal
+    end
+
+    # Transform keys of hash or array of hashes in snake case
+    # @param hash_object [Array/Hash] object that will be formatted
+    # @return [Array/Hash] keys converted in snake case
+    def self.transform_hash_keys_in_snake_case(hash_object)
+      case hash_object
+      when Array
+        hash_object.map { |v| transform_hash_keys_in_snake_case(v) }
+      when Hash
+        Hash[hash_object.map { |k, v| [k.to_s.underscore, transform_hash_keys_in_snake_case(v)] }]
+      else
+        hash_object
+       end
     end
 
     # Check if the JSON passed is valid or not
