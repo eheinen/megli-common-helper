@@ -17,12 +17,12 @@ class TimeHelperTest < Minitest::Test
     assert_equal zone, '-0300'
   end
 
-  def test_fortmat_date
+  def test_format_date
     time = Time.now
-    time_formatted = TimeHelper.fortmat_date(time, '%Y')
+    time_formatted = TimeHelper.format_date(time, '%Y')
     assert_equal time_formatted, time.year.to_s
 
-    time_formatted = TimeHelper.fortmat_date("26/05/2017 10:12:34", '%d-%m-%Y %Hh %Mmin %Ssec')
+    time_formatted = TimeHelper.format_date("26/05/2017 10:12:34", '%d-%m-%Y %Hh %Mmin %Ssec')
     assert_equal time_formatted, '26-05-2017 10h 12min 34sec'
   end
 

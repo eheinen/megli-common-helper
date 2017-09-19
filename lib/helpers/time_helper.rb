@@ -15,7 +15,7 @@ module MegliHelper
     # @param time [Time | String] time to be formatted
     # @param format [String] format used
     # @return [String] time formatted
-    def self.fortmat_date(time, format)
+    def self.format_date(time, format)
       time = Time.parse(time) if time.class == String
       time.strftime(format)
     end

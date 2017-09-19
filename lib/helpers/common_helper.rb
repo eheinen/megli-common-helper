@@ -51,7 +51,7 @@ module MegliHelper
         Hash[hash_object.map { |k, v| [k.to_s.underscore, transform_hash_keys_in_snake_case(v)] }]
       else
         hash_object
-       end
+      end
     end
 
     # Check if the JSON passed is valid or not
